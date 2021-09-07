@@ -35,7 +35,7 @@ this.$axios.get(`url`).then(res => {
 |components|放公用组件，不要放router组件|
 |directives|全局directive注册，在这里注册|
 |filters| 全局filters注册，在这里注册|
-|mixins| 全局mixins注册，在这里注册|
+|mixins| mixins 相关vue文件写在这里|
 |pages| router页面的vue文件，在这里写，不建议按照菜单嵌套文件夹，以router页面为维度平铺|
 |request|请求相关配置，接口写在request/apis.js里|
 |utils|其他的工具函数写在这里面|
