@@ -12,6 +12,8 @@ const publicPath = process.env.NODE_ENV === 'production'
 ? config.build.assetsPublicPath
 : config.dev.assetsPublicPath
 
+console.log(publicPath, '-----publicPath---------------')
+
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
