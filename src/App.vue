@@ -4,11 +4,11 @@
       <Menu mode="horizontal" theme="dark" active-name="1">
         <div class="layout-logo"></div>
         <div class="layout-nav">
-          <MenuItem name="1">
+          <MenuItem name="1" @click.native="$router.push('/page')">
           <Icon type="ios-navigate"></Icon>
           Item 1
           </MenuItem>
-          <MenuItem name="2">
+          <MenuItem name="2" @click.native="$router.push('/page2')">
           <Icon type="ios-keypad"></Icon>
           Item 2
           </MenuItem>

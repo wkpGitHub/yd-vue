@@ -28,6 +28,9 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         { from: /.*/, to: path.posix.join(config.dev.assetsPublicPath, 'index.html') },
       ],
     },
+    headers: {
+      'Access-control-allow-origin': '*'
+  },
     hot: true,
     contentBase: false, // since we use CopyWebpackPlugin.
     compress: true,

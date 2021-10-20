@@ -15,7 +15,7 @@ export default {
   },
   created() {
     // 请求示例
-    this.$axios.get(`${this.$apis.users}/wkpGitHub`).then(res => {
+    this.$axios.get(`/list`).then(res => {
       console.log(res.data)
     })
   },

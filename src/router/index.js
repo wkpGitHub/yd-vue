@@ -1,13 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import page1 from '@/pages/page1'
+const page1 = () => import('@/pages/page1') 
 
 Vue.use(Router)
 
 export default new Router({
+  base: window.__POWERED_BY_QIANKUN__ ? `/vue` : '/',
+  mode: 'history',
   routes: [
     {
-      path: '/',
+      path: '/page',
       name: 'page1',
       component: page1
     }

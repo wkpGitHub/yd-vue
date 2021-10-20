@@ -3,7 +3,7 @@ import Vue from 'vue';
 import axios from 'axios';
 
 let _axios = axios.create({
-  baseURL: 'https://api.github.com',
+  baseURL: '/api',
   timeout: 30*1000,
   headers: { 'Content-type': 'application/json;charset=UTF-8' }
 });

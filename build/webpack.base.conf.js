@@ -8,7 +8,9 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-
+const publicPath = process.env.NODE_ENV === 'production'
+? config.build.assetsPublicPath
+: config.dev.assetsPublicPath
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
@@ -16,11 +18,11 @@ module.exports = {
     app: './src/main.js'
   },
   output: {
+    library: 'vueApp',
+    libraryTarget: 'umd',
     path: config.build.assetsRoot,
     filename: '[name].js',
-    publicPath: process.env.NODE_ENV === 'production'
-      ? config.build.assetsPublicPath
-      : config.dev.assetsPublicPath
+    publicPath
   },
   externals: {},
   resolve: {
@@ -47,6 +49,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
+          publicPath,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
       },
@@ -55,6 +58,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
+          publicPath,
           name: utils.assetsPath('media/[name].[hash:7].[ext]')
         }
       },
@@ -63,6 +67,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
+          publicPath,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
       }
